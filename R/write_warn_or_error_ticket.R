@@ -21,7 +21,7 @@ write_warn_or_error_ticket <- function(expr)
                                                     warning = w.handler),
              warning = W)
 
-    if (!("error" %in% class(output$error))) {
+    if (("error" %in% class(output$error))) {
         error_message <- secretary::typewrite_error(output$error$message)
     }
 
